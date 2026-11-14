@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Report Card Maker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- STEP 2: THE PAGE STRUCTURE. Every id below is a "handle" JavaScript can grab. -->
+
+    <header class="top no-print">
+      <h1>Report card maker</h1>
+      <p>Add your subjects and scores, then make your report card.</p>
+    </header>
+
+    <main class="layout">
+      <!-- LEFT SIDE: where we type things in -->
+      <section class="panel no-print">
+        <div class="box">
+          <h2>About the student</h2>
+          <label for="studentName">Name</label>
+          <input
+            id="studentName"
+            type="text"
+            placeholder="For example: Ada Okafor"
+          />
+          <label for="studentClass">Class</label>
+          <input
+            id="studentClass"
+            type="text"
+            placeholder="For example: JSS 1"
+          />
+        </div>
+
+        <div class="box">
+          <h2>Add a subject</h2>
+          <label for="subjectName">Subject</label>
+          <input
+            id="subjectName"
+            type="text"
+            placeholder="For example: Mathematics"
+          />
+          <label for="subjectScore">Score (0 to 100)</label>
+          <input
+            id="subjectScore"
+            type="number"
+            min="0"
+            max="100"
+            placeholder="For example: 85"
+          />
+          <button id="addBtn" class="btn">Add subject</button>
+          <p id="message" class="message"></p>
+        </div>
+
+        <div class="box">
+          <h2>Your subjects</h2>
+          <p id="emptyNote" class="empty">
+            No subjects yet. Add your first one above.
+          </p>
+          <ul id="subjectList" class="subject-list"></ul>
+        </div>
+
+        <div class="actions">
+          <button id="generateBtn" class="btn big">Make report card</button>
+          <button id="printBtn" class="btn ghost" disabled>
+            Print report card
+          </button>
+        </div>
+      </section>
+
+      <!-- RIGHT SIDE: the report card appears here -->
+      <section class="report-area">
+        <div id="report" class="paper">
+          <p class="placeholder">Your report card will appear here.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
